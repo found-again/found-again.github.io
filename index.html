@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Found Again · The Blodgett Conversion Stories</title>
+  <meta name="description" content="Picture books that tell how our Blodgett-line ancestors joined The Church of Jesus Christ of Latter-day Saints, and the missionaries who found them. Sign the guestbook and download each episode as a PDF.">
+  <!-- Link preview when the address is shared in a text or group chat. Update if the site address changes. -->
+  <meta property="og:title" content="Found Again · The Blodgett Conversion Stories">
+  <meta property="og:description" content="Family picture books: how our ancestors found the restored gospel, and the missionaries who found them.">
+  <meta property="og:image" content="https://found-again.github.io/assets/img/og.jpg">
+  <meta property="og:url" content="https://found-again.github.io/">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+  <header class="hero" id="top">
+    <div class="hero__art" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="eyebrow">A family story · Season One</p>
+      <h1>Found Again</h1>
+      <p class="hero__sub">The Blodgett conversion stories, told as picture books</p>
+      <blockquote class="hero__quote">“They were a family of pioneer Saints scattered to the American frontier, who nearly lost the faith of their grandparents — until, one valley at a time, the missionaries found them again.”</blockquote>
+      <a class="btn btn--light" href="#episodes">See the episodes</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="guestbook" id="guestbook">
+      <div class="card guestbook__card">
+        <div id="guestbook-form-wrap">
+          <h2>Sign the guestbook</h2>
+          <p>Before you download a book, please tell us who you are. Your name goes on the family reading list so we know who the stories have reached.</p>
+          <form id="guestbook-form" novalidate>
+            <label>First name
+              <input name="first" type="text" required autocomplete="given-name" autocapitalize="words" maxlength="60">
+            </label>
+            <label>Last name
+              <input name="last" type="text" required autocomplete="family-name" autocapitalize="words" maxlength="60">
+            </label>
+            <p class="form-hint" id="form-hint" hidden></p>
+            <p class="form-error" id="form-error" hidden>Please enter both your first and last name.</p>
+            <button type="submit" class="btn btn--primary">Continue</button>
+          </form>
+        </div>
+        <div id="guestbook-welcome" hidden>
+          <h2>Welcome, <span id="welcome-name"></span>.</h2>
+          <p>The downloads below are open for you. <button type="button" class="linkbtn" id="change-name">Not you? Change the name.</button></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="episodes" id="episodes">
+      <div class="wrap">
+        <h2 class="section-title">The episodes</h2>
+        <p class="section-intro">Each episode is a picture book told in the grandmother's voice and built from the family records. Every book ends with an appendix that lists its sources page by page.</p>
+        <noscript><p class="section-intro">This page needs JavaScript turned on to show the episodes.</p></noscript>
+        <div id="episode-list" class="episode-list"></div>
+      </div>
+    </section>
+
+    <section class="coming" id="coming">
+      <div class="wrap">
+        <h2 class="section-title">Coming next</h2>
+        <div id="coming-list" class="coming-list"></div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap">
+        <h2 class="section-title">About this project</h2>
+        <p>These picture books tell how our ancestors joined The Church of Jesus Christ of Latter-day Saints, and the stories of the missionaries who left their homes to find them. They were made for our family: children, grandchildren, and cousins near and far.</p>
+        <p>Each book is built from the records: the 1898 Bitterroot register, family histories and journals, mission reports, obituaries, and the memories kept on FamilySearch. The appendix at the back of every book lists the sources page by page and notes where the records disagree.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Found Again · A family history project · <span id="year"></span></p>
+    <p>Questions or corrections? Reply to whoever sent you this link.</p>
+  </footer>
+
+  <dialog id="lightbox" class="lightbox" aria-label="Page viewer">
+    <button type="button" class="lightbox__close" id="lightbox-close" aria-label="Close">×</button>
+    <button type="button" class="lightbox__nav lightbox__prev" id="lightbox-prev" aria-label="Previous page">‹</button>
+    <figure>
+      <img id="lightbox-img" alt="">
+      <figcaption><span id="lightbox-cap"></span> <span class="lightbox__count" id="lightbox-count"></span></figcaption>
+    </figure>
+    <button type="button" class="lightbox__nav lightbox__next" id="lightbox-next" aria-label="Next page">›</button>
+  </dialog>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
