@@ -149,6 +149,20 @@ Option 2: drag the folder again).
 **Words on the page.** The intro and "About this project" text is in `index.html`; the episode
 blurbs are in `assets/config.js`.
 
+**The picture behind the title.** It is `assets/img/hero-bitterroot.jpg`, made from the original
+artwork (not from the PDF) so it stays sharp on large screens:
+
+```bash
+python3 tools/make_images.py --hero-image "/path/to/the art.png" --hero-crop 40,6,1336,726 --hero-out hero-bitterroot.jpg
+```
+
+The four crop numbers trim the paper margins of that painting (left, top, right, bottom, in the
+artwork's own pixels). To use a different painting, give it a new file name with `--hero-out` and
+put that name in `assets/styles.css` and in the `preload` line of `index.html`.
+
+**After changing `assets/styles.css`.** Raise the number in `styles.css?v=2` in `index.html`, so
+browsers fetch the new file right away instead of using a saved copy for up to ten minutes.
+
 ---
 
 ## Part D · Reading the guestbook

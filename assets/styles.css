@@ -47,7 +47,8 @@ p { margin: 0 0 1em; }
 .hero {
   position: relative;
   isolation: isolate;
-  min-height: min(78vh, 760px);
+  /* At least 78% of the window height; wide windows get a taller hero so less of the painting is cropped. */
+  min-height: max(min(78vh, 760px), min(40vw, 94vh));
   display: grid;
   place-items: center;
   text-align: center;
@@ -59,17 +60,30 @@ p { margin: 0 0 1em; }
   position: absolute;
   inset: 0;
   z-index: -2;
-  background: #51606c url("img/hero.jpg") center / cover no-repeat;
+  background: #51606c url("img/hero-bitterroot.jpg") center / cover no-repeat;
 }
+/* A wide, short window can only show a band of the painting. Slide that band upward so the
+   snowy peaks and some sky stay in frame instead of being cut off. */
+@media (min-aspect-ratio: 2/1) { .hero__art { background-position: center 38%; } }
+@media (min-aspect-ratio: 23/10) { .hero__art { background-position: center 24%; } }
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, rgba(28, 20, 14, 0.2) 0%, rgba(28, 20, 14, 0.45) 55%, rgba(28, 20, 14, 0.8) 100%);
+  background: linear-gradient(180deg, rgba(28, 20, 14, 0.05) 0%, rgba(28, 20, 14, 0.28) 55%, rgba(28, 20, 14, 0.72) 100%);
 }
-.hero__content { max-width: 760px; }
-.hero .eyebrow { color: #f3dca5; }
+.hero__content { position: relative; max-width: 760px; }
+/* Soft dark glow behind the words, so they stay readable over snow and sky. */
+.hero__content::before {
+  content: "";
+  position: absolute;
+  inset: -56px -110px;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(28, 20, 14, 0.52) 0%, rgba(28, 20, 14, 0.34) 42%, rgba(28, 20, 14, 0) 72%);
+}
+.hero .eyebrow { color: #f8e6b8; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8); }
 .hero h1 {
   font-size: clamp(3rem, 9vw, 5.6rem);
   margin-bottom: 0.15em;
@@ -111,7 +125,7 @@ p { margin: 0 0 1em; }
 .btn--primary:hover { background: var(--rust-dark); transform: translateY(-1px); }
 .btn--ghost { background: transparent; color: var(--rust-dark); border-color: var(--rust); }
 .btn--ghost:hover { background: rgba(154, 75, 39, 0.08); }
-.btn--light { background: rgba(255, 255, 255, 0.14); color: #fff; border-color: rgba(255, 255, 255, 0.75); backdrop-filter: blur(4px); }
+.btn--light { background: rgba(255, 255, 255, 0.14); color: #fff; border-color: rgba(255, 255, 255, 0.75); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
 .btn--light:hover { background: rgba(255, 255, 255, 0.28); }
 .btn__meta { font-weight: 400; opacity: 0.85; font-size: 0.9em; }
 .btn:focus-visible, .gallery__item:focus-visible, .linkbtn:focus-visible, .lightbox button:focus-visible {
