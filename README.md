@@ -8,7 +8,8 @@ recorded in a Google Sheet that only you can see.
 
 | Piece | Where it runs | Cost |
 | --- | --- | --- |
-| The web page, images and PDFs (this folder) | GitHub Pages, at https://found-again.github.io/ | free |
+| The web page, images and PDFs (this folder) | GitHub Pages, at https://godiscalling.family/ | free |
+| The address godiscalling.family | Porkbun (registered 16 Nov 2026, renews each November) | $35.53 a year |
 | The guestbook log and the summary counts | A Google Sheet in your Drive | free |
 | The bridge between them (`apps-script/Code.gs`) | Google Apps Script, attached to that Sheet | free |
 
@@ -74,7 +75,8 @@ Later, if you ever change `Code.gs`, the live copy only updates when you choose
 
 ### Option 1 · GitHub Pages (free; this is how the site is published)
 
-The site lives at **https://found-again.github.io/**. It is served from the repository
+The site lives at **https://godiscalling.family/** (printed as GodIsCalling.family). The old
+address, https://found-again.github.io/, forwards there. It is served from the repository
 `found-again/found-again.github.io` on GitHub. A free organization named `found-again` owns a
 repository named `found-again.github.io`, and GitHub publishes any repository named that way at
 the matching address.
@@ -109,8 +111,11 @@ Things to know:
 - Each PDF must stay under 100 MB. The two current books are 20 MB and 12 MB.
 - The `og:image` and `og:url` lines near the top of `index.html` hold the full site address so that
   a shared link shows a picture in texts and group chats. Change them if the address ever changes.
-- To use your own domain later, add it under the repository's Settings → Pages → Custom domain and
-  point the domain's DNS at GitHub. The github.io address then forwards to it.
+- The custom domain godiscalling.family was bought at Porkbun on 16 Nov 2026 and renews
+  automatically each November. Its DNS at Porkbun points at GitHub (Quick DNS Config → Github,
+  plus `www` → `found-again.github.io`), and the domain is verified for the `found-again`
+  organization (TXT record `_github-pages-challenge-found-again`), so no one else can publish on it.
+  The `CNAME` file in this folder tells GitHub to serve the site there: don't delete it.
 
 ### Option 2 · Netlify Drop (no GitHub, drag and drop)
 
