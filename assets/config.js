@@ -44,10 +44,10 @@ window.FOUND_AGAIN_CONFIG = {
       cover: "assets/img/ep2-cover.jpg",
       blurb: "Newman Blodgett was a builder of bridges who tested a thing before he trusted it. In the spring of 1832 two young missionaries, Orson Pratt and Lyman Johnson, came walking over the hills into Bath. Sally believed first.",
       gallery: [
-        { src: "assets/img/ep2-p04.jpg", thumb: "assets/img/ep2-p04-thumb.jpg", caption: "Page 4 · Two young men over the hills" },
-        { src: "assets/img/ep2-p13.jpg", thumb: "assets/img/ep2-p13-thumb.jpg", caption: "Page 13 · “I believe it's true”" },
-        { src: "assets/img/ep2-p14.jpg", thumb: "assets/img/ep2-p14-thumb.jpg", caption: "Page 14 · Sally goes first" },
-        { src: "assets/img/ep2-p21.jpg", thumb: "assets/img/ep2-p21-thumb.jpg", caption: "Page 21 · Joseph Smith and Polly" }
+        { src: "assets/img/ep2-p04.jpg", thumb: "assets/img/ep2-p04-thumb.jpg", caption: "Page 3 · Two young men over the hills" },
+        { src: "assets/img/ep2-p13.jpg", thumb: "assets/img/ep2-p13-thumb.jpg", caption: "Page 12 · “I believe it's true”" },
+        { src: "assets/img/ep2-p14.jpg", thumb: "assets/img/ep2-p14-thumb.jpg", caption: "Page 13 · Sally goes first" },
+        { src: "assets/img/ep2-p21.jpg", thumb: "assets/img/ep2-p21-thumb.jpg", caption: "Page 20 · Joseph Smith and Polly" }
       ]
     }
   ],
